@@ -53,7 +53,21 @@ public class NumberSystemConversion {
     public static StringBuilder decimalHexa(int num){
     	int flag=0;
 		if(num==0 ||num==1 || num==2 || num ==3 || num==4 || num==5 || num==6 || num==7 || num==8 || num==9 || num ==10 || num==11 || num==12 || num==13 || num==14 || num==15){
-			StringBuilder str= new StringBuilder(num);
+			StringBuilder str= new StringBuilder(1);
+			if(num==10)
+				str.append("A");
+			else if(num==11)
+				str.append("B");
+			else if(num==12)
+				str.append("C");
+			else if(num==13)
+				str.append("D");
+			else if(num==14)
+				str.append("E");
+			else if(num==15)
+				str.append("F");
+			else
+				str.append(num);
 			return str;
 		}
     	else{	
@@ -71,7 +85,7 @@ public class NumberSystemConversion {
 			int rem1[]=Arrays.copyOfRange(rem,flag,rem.length);
 			StringBuilder str= new StringBuilder(rem1.length);
 			for(int i=0;i<rem1.length;i++){
-				if(rem[i]==10)
+				if(rem1[i]==10)
 					str.append("A");
 				else if(rem1[i]==11)
 					str.append("B");
@@ -181,6 +195,7 @@ public class NumberSystemConversion {
 	}
        
      public static void main (String[] args) {
+		//coded by rahul kapar(ig-grkh.rahul__)
         Scanner input = new Scanner(System.in);
 		Scanner input1 = new Scanner(System.in);
 		System.out.println("Please Tell Us Your Number Type\na.Decimal\nb.Binary\nc.Octal\nd.Hexa-Decimal");
@@ -270,6 +285,7 @@ public class NumberSystemConversion {
 		}	
 		else
 		System.out.println("Invalid Input!");
+
       	input.close();
 		input1.close();
     }
